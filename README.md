@@ -22,3 +22,15 @@ sls invoke local -f {functionName} -s {environment}
 ```
 
 This last command will help you to work locally with your changes.
+
+If you want to pass any parameter one way to do it is using the following command:
+
+```
+sls invoke local -f {functionName} -s {environment} -d {data}
+```
+
+If you will pass a object in the data maybe you can considerer to have this struture
+
+```
+'{"key": "value", ..... , "keyN": "valueN"}'
+```

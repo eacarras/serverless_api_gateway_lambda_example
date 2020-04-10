@@ -1,0 +1,23 @@
+{
+  "name": "serverless_api_gateway_lambda_example",
+  "version": "1.0.0",
+  "description": "This is a repository to show how to use serverless with some services of AWS.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eacarras/serverless_api_gateway_lambda_example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eacarras/serverless_api_gateway_lambda_example/issues"
+  },
+  "homepage": "https://github.com/eacarras/serverless_api_gateway_lambda_example#readme",
+  "dependencies": {
+    "serverless-offline": "^6.1.4"
+  }
+}

@@ -34,3 +34,5 @@ If you will pass a object in the data maybe you can considerer to have this stru
 ```
 '{"key": "value", ..... , "keyN": "valueN"}'
 ```
+
+NOTE: This project have a setup to be worker offline

@@ -11,3 +11,9 @@ functions:
       - http:
           path: first_endpoint/{name}
           method: get
+  showUser:
+    handler: handler.showUser
+    events:
+      - http:
+          path: users
+          method: post

@@ -1,7 +1,5 @@
 'use strict';
-
-const verifyLength = require('./constraints/verify_password_length');
-const verifyStrength = require('./constraints/verify_password_strength');
+const { verifyLength, verifyStrength } = require('./constraints');
 
 
 module.exports.password = async event => {
@@ -18,7 +16,10 @@ module.exports.password = async event => {
       })
     }
   } catch (e) {
-    // If verify password return a Promise.reject() we will enter here
+    /*
+      If any verification of the password return a Promise.reject() 
+      we will enter here
+    */
     return {
       statusCode: 400,
       body: JSON.stringify({

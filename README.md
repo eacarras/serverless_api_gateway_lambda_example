@@ -1,5 +1,8 @@
 # serverless_api_gateway_lambda_example
-This is a repository to show how to use serverless with some services of AWS.
+This is a repository to show how to use serverless with some services of AWS. We have for the moment 1 project:
+
+- Example of creation of endpoints using NodeJs, Serverless and others..
+- - Folder name (endpoints_examples)
 
 ## Deploy lambda services
 Just run the command:
@@ -36,3 +39,13 @@ If you will pass a object in the data maybe you can considerer to have this stru
 ```
 
 NOTE: This project have a setup to be worker offline
+
+### Delete all our process in the cloud
+
+You can delete all our process and configurations in AWS using the following command
+
+```
+sls remove
+```
+
+NOTE: This command delete the lambdas and the endpoints created in AWS. NOT WILL DELETE YOUR LOCAL WORK.

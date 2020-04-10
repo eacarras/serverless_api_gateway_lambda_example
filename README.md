@@ -6,7 +6,15 @@ This is a repository to show how to use serverless with some services of AWS. We
 - Check password strength endpoint.
 - - Folder name (password_strenth)
 
-## Deploy lambda services
+## Endpoints
+In the password strength project we only have one endpoint:
+
+```
+{route}/password/{password}
+```
+
+
+### Deploy lambda services
 Just run the command:
 
 `sls deploy`

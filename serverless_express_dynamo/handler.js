@@ -38,7 +38,7 @@ app.post('/user', (req, resp) => {
 });
 
 // Route for get all the users
-app.get('/users', (req, resp) => {
+app.get('/users', (_, resp) => {
   const params = {
     TableName: USERS_ENV,
   };
@@ -56,6 +56,33 @@ app.get('/users', (req, resp) => {
       message: 'Users getted successfully.',
       users: Items,
     });
+  });
+});
+
+// Route for get one specific user
+app.get('/user/:userId', (req, resp) => {
+  const params = {
+    TableName: USERS_ENV,
+    Key: {
+      userId: req.params.userId,
+    },
+  };
+
+  dynamoDb.get(params, (error, result) => {
+    if (error) {
+      return resp.status(400).json({
+        error_message: 'We can not get the user specified, ' + error,
+      });
+    }
+
+    if (result.Item) {
+      const { userId, name } = result.Item;
+      return resp.json({
+        userId, name,
+      });
+    }
+    
+    resp.status(404).json({ error: 'User not found..', });
   });
 });
 

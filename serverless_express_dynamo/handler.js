@@ -11,10 +11,12 @@ const dynamoDb = AWS.DynamoDB.DocumentClient();
 app.use(bodyParser.urlencoded({ extended: true, }));
 
 
+// Generic route
 app.get('/', (_, resp) => {
   resp.send('The endpoint is working without problems...');
 });
 
+// Route for insert an user
 app.post('/user', (req, resp) => {
   const { userId, name } = req.body;
   const params = {
@@ -27,11 +29,33 @@ app.post('/user', (req, resp) => {
   dynamoDb.put(params, (error) => {
     if (error) {
       resp.status(400).json({
-        error_message: 'No se ha podido insertar usuario, ' + error;
+        error_message: 'User can not be inserted, ' + error,
       });
     }
 
     resp.json({ userId, name });
+  });
+});
+
+// Route for get all the users
+app.get('/users', (req, resp) => {
+  const params = {
+    TableName: USERS_ENV,
+  };
+
+  dynamoDb.scan(params, (error, result) => {
+    if (error) {
+      resp.status(400).json({
+        error_message: 'We can not get the users, ' + error,
+      });
+    }
+
+    const { Items } = result;
+    resp.json({
+      success: true,
+      message: 'Users getted successfully.',
+      users: Items,
+    });
   });
 });
 

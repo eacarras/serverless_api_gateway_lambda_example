@@ -1,10 +1,12 @@
 # serverless_api_gateway_lambda_example
-This is a repository to show how to use serverless with some services of AWS. We have for the moment 2 projects:
+This is a repository to show how to use serverless with some services of AWS. We have for the moment 3 projects:
 
 - Example of creation of endpoints using NodeJs, Serverless and others..
 - - Folder name (endpoints_examples)
 - Check password strength endpoint.
 - - Folder name (password_strenth)
+- Simple CRUD with Express and Dynamo using Serverless
+- - Folder name and documentation (serverless_express_dynamo)
 
 ## Endpoints
 In the password strength project we only have one endpoint:
@@ -12,7 +14,6 @@ In the password strength project we only have one endpoint:
 ```
 {route}/password/{password}
 ```
-
 
 ### Deploy lambda services
 Just run the command:

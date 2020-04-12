@@ -1,4 +1,13 @@
 # Serverless with Express and Dynamo
+To work locally with DynamoDb and serverless, you need to run the following commands:
+```
+sls dynamodb install
+```
+
+After that you need to run:
+```
+sls offline start
+```
 
 ## Table
 The table only have two fields:

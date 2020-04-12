@@ -2,6 +2,15 @@ service: express-sls
 
 custom:
   tableName: 'user-table-${self:provider.stage}'
+  dynamodb:
+    start:
+      migrate: true
+    stages:
+      - dev
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
 
 provider:
   name: aws

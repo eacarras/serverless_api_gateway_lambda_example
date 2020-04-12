@@ -6,8 +6,17 @@ const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
 
 const USERS_ENV = process.env.USERS_ENV;
+const IS_OFFLINE = process.env.IS_OFFLINE;
 
-const dynamoDb = AWS.DynamoDB.DocumentClient();
+let dynamoDb;
+if (IS_OFFLINE === 'true') {
+  dynamoDb = new AWS.DynamoDB.DocumentClient({
+    region: 'localhost',
+    endpoint: 'http://localhost:8000',
+  });
+} else {
+  dynamoDb = AWS.DynamoDB.DocumentClient();
+}
 app.use(bodyParser.urlencoded({ extended: true, }));
 
 

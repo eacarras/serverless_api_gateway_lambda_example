@@ -1,0 +1,12 @@
+service: express-sls
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  handleExpress:
+    handler: handler.handleExpress
+    events:
+      - http: ANY /             # Handle all the routes without params
+      - http: ANY {proxy+}      # Handle all the routes with params

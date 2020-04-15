@@ -1,0 +1,9 @@
+service: crud-rds
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  hello:
+    handler: handler.hello

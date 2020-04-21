@@ -24,7 +24,7 @@ const upload = multer({
 app.post('/upload', (req, resp) => {
   upload(req, res, (err) => {
     if (err) {
-      resp.send('Error to upload the file', err).status(500);
+      resp.send(err).status(500);
     } else {
       resp.send('File upload successfully').status(200);
     }

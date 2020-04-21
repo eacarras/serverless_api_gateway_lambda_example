@@ -72,3 +72,6 @@ Yoy can manage your own credential locally in the file
 ```
 ~/.aws/credentials
 ```
+
+### Others
+Take into account when you are in some services like `S3` we need to add the permissions to role.

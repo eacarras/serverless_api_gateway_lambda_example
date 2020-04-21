@@ -1,0 +1,28 @@
+service: s3-serverless
+
+custom:
+  bucket: general-bucket
+  default-stage: dev
+  apigwBinary:
+    types:
+      - '*/*' # Allow all types of files
+
+plugins:
+  - serverless-apigw-binary
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: default
+  stage: $(opt:stage, self:custom.default_stage)
+
+functions:
+  hello:
+    handler: handler.hello
+    environment:
+      bucket: $(self:custom.bucket)-$(self:provider.stage)
+    events:
+      - http:
+          path: /
+          method: get
+

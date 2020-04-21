@@ -1,5 +1,5 @@
 # serverless_api_gateway_lambda_example
-This is a repository to show how to use serverless with some services of AWS. We have for the moment 3 projects:
+This is a repository to show how to use serverless with some services of AWS. We have for the moment 4 projects:
 
 - Example of creation of endpoints using NodeJs, Serverless and others..
 - - Folder name (endpoints_examples)
@@ -9,6 +9,8 @@ This is a repository to show how to use serverless with some services of AWS. We
 - - Folder name and documentation (serverless_express_dynamo)
 - Simple CRUD to an RDS instance with Serverless
 - - Folder name (crud_rd)(mini quick project)(just a template not worked at all)
+- Simple application connected to a s3 bucket
+- - Folder name (s3)
 
 ## Endpoints
 In the password strength project we only have one endpoint:

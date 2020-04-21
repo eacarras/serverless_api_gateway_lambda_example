@@ -12,6 +12,11 @@ This is a repository to show how to use serverless with some services of AWS. We
 - Simple application connected to a s3 bucket
 - - Folder name (s3)
 
+And some utils:
+
+- Example about use API_Keys with serverless
+-- Folder name (api_keys)
+
 ## Endpoints
 In the password strength project we only have one endpoint:
 
@@ -23,6 +28,10 @@ In the password strength project we only have one endpoint:
 Just run the command:
 
 `sls deploy`
+
+With a specific stage you need to do:
+
+`sls deploy --stage {stage}`
 
 ### Test your lambda uploaded
 You can run the following command in order to test your lambda:

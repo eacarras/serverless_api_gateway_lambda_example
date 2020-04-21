@@ -7,6 +7,8 @@ This is a repository to show how to use serverless with some services of AWS. We
 - - Folder name (password_strenth)
 - Simple CRUD with Express and Dynamo using Serverless
 - - Folder name and documentation (serverless_express_dynamo)
+- Simple CRUD to an RDS instance with Serverless
+- - Folder name (crud_rd)(mini quick project)(just a template not worked at all)
 
 ## Endpoints
 In the password strength project we only have one endpoint:

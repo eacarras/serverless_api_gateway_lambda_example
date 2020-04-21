@@ -17,12 +17,12 @@ provider:
   stage: $(opt:stage, self:custom.default_stage)
 
 functions:
-  hello:
-    handler: handler.hello
+  uploadS3file:
+    handler: handler.app
     environment:
       bucket: $(self:custom.bucket)-$(self:provider.stage)
     events:
       - http:
-          path: /
-          method: get
+          path: /upload
+          method: post
 

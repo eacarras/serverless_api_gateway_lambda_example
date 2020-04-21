@@ -3,7 +3,41 @@ service: crud-rds
 provider:
   name: aws
   runtime: nodejs12.x
+  vpc:
+    securityGroupIds:
+      - here value
+    subnetIds:
+      - here value
+      - here value
 
 functions:
-  hello:
-    handler: handler.hello
+  findAll:
+    handler: Crud/modules.findAll
+    events:
+      - http:
+          path: modules
+          method: get
+  findOne:
+    handler: Crud/modules.findOne
+    events:
+      - http:
+          path: modules/{todo}
+          method: get
+  create:
+    handler: Crud/modules.create
+    events:
+      - http:
+          path: modules
+          method: post
+  update:
+    handler: Crud/modules.update
+    events:
+      - http:
+          path: modules/{todo}
+          method: put
+  delete:
+    handler: Crud/modules.delete
+    events:
+      - http:
+          path: modules/{todo}
+          method: delete

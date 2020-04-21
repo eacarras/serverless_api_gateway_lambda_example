@@ -62,3 +62,11 @@ sls remove
 ```
 
 NOTE: This command delete the lambdas and the endpoints created in AWS. NOT WILL DELETE YOUR LOCAL WORK.
+
+### Profile
+Remember in the manage of the credentials in the aws console you can manage some credentials to your differents users.
+
+Yoy can manage your own credential locally in the file
+```
+~/.aws/credentials
+```

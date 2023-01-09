@@ -19,6 +19,6 @@
   "homepage": "https://github.com/eacarras/serverless_api_gateway_lambda_example#readme",
   "dependencies": {
     "querystring": "^0.2.0",
-    "serverless-offline": "^6.1.4"
+    "serverless-offline": "^12.0.4"
   }
 }
